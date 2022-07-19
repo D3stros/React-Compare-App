@@ -1,10 +1,10 @@
 import './App.css';
-import Products from './components/products';
+import Trees from './components/trees';
 
 function App() {
   return (
     <div className="App">
-      <Products />
+      <Trees />
     </div>
   );
 }
