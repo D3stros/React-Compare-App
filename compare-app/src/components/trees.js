@@ -27,7 +27,7 @@ class Trees extends Component {
         //This helps us in identifying the component
         let id = temparr.indexOf(e.target.id)
         //Checking if the component is already present in the arr variable or    not
-        if (id != -1) {
+        if (id !== -1) {
             //If present then remove it
             temparr.splice(id, 1)
         }
@@ -47,7 +47,7 @@ class Trees extends Component {
         // Iterating in temparr
         for (var i = 0; i < temparr.length; i++) {
             // x is the object from `this.state.products` which has the required id
-            let x = this.state.trees.find(tree => tree.id == temparr[i]);
+            let x = this.state.trees.find(tree => tree.id === temparr[i]);
             temp.push(x)
         }
 
@@ -57,7 +57,7 @@ class Trees extends Component {
                     {this.state.trees.map((tree, index) => (
                         <Col key={tree.id} md="2" lg="2">
                             <Card body outline engine="primary">
-                                <img height="120px" width="240px" src={require("../assets/images/" + tree.img)} />
+                                <img height="120px" width="240px" src={require("../assets/images/placeholder.JPG")} alt={tree.name} />
                                 <CardTitle>{tree.name}</CardTitle>
                                 <Button type="button" id={tree.id} onClick={this.handleClick}>Compare</Button>
                             </Card>
@@ -76,9 +76,9 @@ class Trees extends Component {
                     {temp.map((tree) => (
                         <tbody>
                             <tr>
-                                <td>{tree.name}</td>
-                                <td>{tree.height}</td>
-                                <td>{tree.age}</td>
+                                <td key="tree.name">{tree.name}</td>
+                                <td key="tree.height">{tree.height}</td>
+                                <td key="tree.age">{tree.age}</td>
                             </tr>
                         </tbody>
 
